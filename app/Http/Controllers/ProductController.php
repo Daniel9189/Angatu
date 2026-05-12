@@ -18,7 +18,7 @@ class ProductController extends Controller
         $idade = 18;
         $html = '<h1>Olá, seja bem-vindo!</h1>';
 
-        return view('site.empresa', compact('nome', 'idade', 'html'));
+        return view('site.home', compact('nome', 'idade', 'html'));
         
         // return view('site.empresa', [
         //     'nome' => $nome,
