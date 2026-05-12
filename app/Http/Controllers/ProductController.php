@@ -14,8 +14,8 @@ class ProductController extends Controller
     {
         // $products = Product::all();
         // return dd($products);
-        $nome = 'Daniel Rocha de Brito';
-        $idade = 18;
+        $nome = 'Larissa';
+        $idade = 51;
         $html = '<h1>Olá, seja bem-vindo!</h1>';
 
         return view('site.home', compact('nome', 'idade', 'html'));
@@ -48,7 +48,7 @@ class ProductController extends Controller
      */
     public function show(string $id)
     {
-        if
+        //
     }
 
     /**
