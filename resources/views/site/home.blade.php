@@ -5,61 +5,42 @@
 @section('conteudo')
 
 
-{{-- Estruturas de controle --}}
+{{-- Estruturas de repetição --}}
 
-
-@guest
-    não autenticado
-@endguest
-
-<br><br>
-
-@auth
-    autenticado
-@endauth
-Não entrou na condião de autenticação
+Frutas que eu não gosto: <br><br>
+@forelse ($frutasQueEuNaoGosto as $fruta)
+    {{$fruta}} <br>
+    
+@empty
+    Gosto de todas as frutas!
+@endforelse
 
 <br><br>
 
-@empty($nome)
-está vazia
-@else
-não está vazia
-@endempty
+Frutas que eu gosto: <br><br>
+@foreach ($frutasQueEuGosto as $fruta)
+    {{$fruta}} <br>
+@endforeach
 
 <br><br>
 
-@isset($nome)
-existe
-@endisset
+@php
+    $i = 1;
+@endphp
+
+While <br><br>
+@while ($i < 11)
+    valor atual é {{ $i }}<br>
+    @php
+        $i++;
+    @endphp
+@endwhile
 
 <br><br>
 
-@switch($idade)
-    @case(18)
-        true
-        @break
-    @case(25)
-        false
-        @break
-    @default
-        padron
-@endswitch
-
-<br><br>
-
-@unless ($nome == 'Jordecleison')
-    true
-@else
-    false
-@endunless
-
-<br><br>
-
-@if ($nome == 'Daniel')
-    Bem-vindo, Daniel! Que bom ter você aqui!
-@else
-    Cadê Daniel? Ele é o melhor aluno do curso!
-@endif
+For<br><br>
+@for ($i = 0; $i < 11; $i++)
+    valor atual é {{ $i }} <br>
+@endfor
 
 @endsection

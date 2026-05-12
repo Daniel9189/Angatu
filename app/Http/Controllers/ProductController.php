@@ -17,8 +17,10 @@ class ProductController extends Controller
         $nome = 'Larissa';
         $idade = 51;
         $html = '<h1>Olá, seja bem-vindo!</h1>';
+        $frutasQueEuGosto = ['Macã', 'Laraja', 'Melão', 'Melancia', 'Uva', 'Maracujá', 'Abacate', 'Pera', 'Manga'];
+        $frutasQueEuNaoGosto = [];
 
-        return view('site.home', compact('nome', 'idade', 'html'));
+        return view('site.home', compact('nome', 'idade', 'html', 'frutasQueEuGosto', 'frutasQueEuNaoGosto'));
         
         // return view('site.empresa', [
         //     'nome' => $nome,
