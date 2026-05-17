@@ -6,7 +6,7 @@
 
 <div class="row container" style="display: flex; flex-wrap: wrap;">
     @foreach ($products as $product)
-    <div class="col s12 m4 container" style="display: flex;">
+    <div class="col s12 m4 l3 container" style="display: flex;">
         <div class="card">
             <div class="card-image" style="flex: 1;">
                 <img src="{{ $product->imagem }}">

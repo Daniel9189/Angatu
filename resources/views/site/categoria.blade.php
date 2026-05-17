@@ -6,7 +6,7 @@
 
     <div class="row container" style="display: flex; flex-wrap: wrap;">
 
-    <h3>Categoria: </h3>
+    <h4>Categoria: {{ $categoria->nome }}</h4>
 
     @foreach ($products as $product)
         <div class="col s12 m4 container" style="display: flex;">
