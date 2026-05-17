@@ -22,4 +22,9 @@ class SiteController extends Controller
         
     }
 
+    public function categoria(int $id) {
+        $products = Product::query()->where('id_categoria', $id)->paginate(3);
+        return view('site.categoria', compact('products'));
+    }
+
 }

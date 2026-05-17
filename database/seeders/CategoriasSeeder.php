@@ -13,6 +13,6 @@ class CategoriasSeeder extends Seeder
      */
     public function run(): void
     {
-        Categoria::factory(100)->create();
+        Categoria::factory(20)->create();
     }
 }

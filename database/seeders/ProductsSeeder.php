@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Categoria;
 use App\Models\Product;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -13,6 +14,6 @@ class ProductsSeeder extends Seeder
      */
     public function run(): void
     {
-        Product::factory(20)->create();
+        Product::factory(100)->recycle(Categoria::all())->create();
     }
 }

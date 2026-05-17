@@ -13,7 +13,7 @@
 
     <ul id='dropdown1' class='dropdown-content'>
         @foreach ($categoriasMenu as $categoriaMenu)
-            <li><a href="">{{ $categoriaMenu->nome }}</a></li>
+            <li><a href="{{ route('site.categoria', $categoriaMenu->id) }}">{{ $categoriaMenu->nome }}</a></li>
         @endforeach
     </ul>
 

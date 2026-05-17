@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\User;
 use App\Models\Categoria;
+use Database\Seeders\CategoriasSeeder;
 
 /**
  * @extends Factory<Product>
@@ -29,7 +30,7 @@ class ProductFactory extends Factory
             'slug' => Str::slug($nome),
             'imagem' => 'https://picsum.photos/400/400?random=' . $this->faker->unique()->randomNumber(),
             'id_user' => User::factory(),
-            'id_categoria' => Categoria::factory()
+            'id_categoria' => Categoria::factory(),
         ];
     }
 }
