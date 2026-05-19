@@ -14,3 +14,9 @@ Route::get('/product/{slug}', [SiteController::class, 'details'])->name('site.de
 Route::get('/categorias/{id}', [SiteController::class, 'categoria'])->name('site.categoria');
 
 Route::get('/carrinho', [CarrinhoController::class, 'carrinhoLista'])->name('site.carrinho');
+
+Route::post('/carrinho', [CarrinhoController::class, 'adicionaCarrinho'])->name('site.addcarrinho');
+
+Route::delete('/carrinho/{id}', [CarrinhoController::class, 'removeCarrinho'])->name('site.removecarrinho');
+
+Route::put('/carrinho/{id}', [CarrinhoController::class, 'atualizaCarrinho'])->name('site.atualizacarrinho');
