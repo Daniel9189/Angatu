@@ -69,7 +69,7 @@ class CartService
         $carrinho = session()->get($this->sessionKey, []);
         foreach ($carrinho as $key => $item) {
             if ($item['id'] == $id) {
-                if ($novaQuantidade >= 0) {
+                if ($novaQuantidade <= 0) {
                     unset($carrinho[$key]);
                 } else {
                     $carrinho[$key]['quantity'] = $novaQuantidade;

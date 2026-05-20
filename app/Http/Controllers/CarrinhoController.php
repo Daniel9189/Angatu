@@ -36,8 +36,17 @@ class CarrinhoController extends Controller
 
     public function atualizaCarrinho(Request $request, int $id)
     {
-        $novaQuantidade = (int) $request->qnt;
-        
+        $novaQuantidade = (int) $request->input('quantity');
+
         MeuCarrinho::update($id, $novaQuantidade);
+
+        return redirect()->route('site.carrinho')->with('success', 'Quantidade Atualizada.');
+    }
+
+    public function limpaCarrinho()
+    {
+        MeuCarrinho::clear();
+
+        return redirect()->route('site.carrinho')->with('aviso', 'O carrinho foi esvaziado.');
     }
 }
