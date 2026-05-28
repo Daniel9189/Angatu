@@ -12,7 +12,8 @@
 <form action="{{ route('login.auth') }}" method="POST">
     @csrf
     E-mail: <br> <input name="email"> <br><br>
-    Senha: <br> <input type="password" name="password">
+    Senha: <br> <input type="password" name="password"> <br><br>
+    <input type="checkbox" name="remember"> Lembrar-me <br><br>
     <button type="submit">Entrar</button>
     
 </form>
