@@ -15,7 +15,7 @@ class ProductPolicy
         //
     }
 
-    public function verProduto(User $user, Product $product) {
+    public function verProduct(User $user, Product $product) {
         return $user->id === $product->id_user;
     }
 }
