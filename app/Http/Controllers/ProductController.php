@@ -13,9 +13,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::query()->paginate();
+        $products = Product::query()->paginate(5);
         
-        return view('site.home', compact('products'));
+        return view('admin.products', compact('products'));
         
         // return view('site.empresa', [
         //     'nome' => $nome,
