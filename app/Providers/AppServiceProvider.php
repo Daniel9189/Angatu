@@ -33,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('categoriasMenu', $categoriasMenu);
         });
 
-        Gate::define('ver-produto', function(User $user, Product $product) {
+        Gate::define('ver-product', function(User $user, Product $product) {
             return $user->id === $product->id_user;
         });
 

@@ -20,14 +20,12 @@ class SiteController extends Controller
 
     public function details(String $slug) {
         $product = Product::query()->where('slug', $slug)->first(); 
-        // Gate::authorize('verProduct', $product);
-        if (auth()->user()->can('verProduct', $product)) {
+        // auth()->user()?->can('verProduct', $product)
+        if (Gate::allows('ver-product', $product)) {
             return view('site.details', compact('product'));
         }
 
-        if (auth()->user()->cannot('verProduct', $product)) {
-            return to_route('site.index');
-        }
+        return to_route('site.index');
         
     }
 
