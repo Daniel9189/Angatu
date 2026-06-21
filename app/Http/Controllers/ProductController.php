@@ -7,6 +7,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
+use function Laravel\Prompts\search;
 
 class ProductController extends Controller
 {
@@ -94,5 +95,21 @@ class ProductController extends Controller
     {
         Product::destroy($id);
         return to_route('admin.products')->with('success', 'O produto foi excluido com sucesso.');
+    }
+
+    public function search(Request $request)
+    {
+        $busca = $request->input('q');
+
+        if ($busca) {
+            $products = Product::where('nome', 'LIKE', "%{busca}%")
+                ->orWhere('descricao', 'LIKE', "%{busca}%")
+                ->paginate(12);
+        }
+        else {
+            $products = Product::paginate(12);
+        }
+
+        return view('site.search', compact('products', 'busca'));
     }
 }

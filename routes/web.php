@@ -30,3 +30,5 @@ Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('adm
 Route::get('/admin/products', [ProductController::class, 'index'])->name('admin.products');
 Route::delete('/admin/product/delete/{id}', [ProductController::class, 'destroy'])->name('admin.product.delete');
 Route::post('/admin/product/store', [ProductController::class, 'store'])->name('admin.product.store');
+
+Route::get('/pesquisa', [ProductController::class, 'search'])->name('product.search');
