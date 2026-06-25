@@ -35,7 +35,7 @@
             </a>
 
             <div class="search-container" style="flex-grow: 1; max-width: 600px; margin: 0 2rem;">
-                <form action="{{ route('site.search') }}" method="GET">
+                <form action="{{ route('product.search') }}" method="GET">
                     <div class="input-field white"
                         style="height: 40px; border-radius: 4px; display: flex; align-items: center; box-shadow: 0 1px 2px rgba(0,0,0,0.1);">
                         <input id="search" name="q" value="{{ $busca ?? '' }}" type="search" placeholder="Buscar produtos, marcas e muito mais..."
