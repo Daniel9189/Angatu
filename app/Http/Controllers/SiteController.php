@@ -21,11 +21,11 @@ class SiteController extends Controller
     public function details(String $slug) {
         $product = Product::query()->where('slug', $slug)->first(); 
         // auth()->user()?->can('verProduct', $product)
-        if (Gate::allows('ver-product', $product)) {
+        // if (Gate::allows('ver-product', $product)) {
             return view('site.details', compact('product'));
-        }
+        // }
 
-        return to_route('site.index');
+        // return to_route('site.index');
         
     }
 
