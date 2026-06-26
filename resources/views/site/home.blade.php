@@ -10,9 +10,7 @@
         <div class="card">
             <div class="card-image" style="flex: 1;">
                 <img src="{{ $product->imagem }}">
-                @can('ver-product', $product)    
-                    <a class="btn-floating halfway-fab waves-effect waves-light red" href="{{ route('site.details', $product->slug) }}"><i class="material-icons">visibility</i></a>
-                @endcan
+                <a class="btn-floating halfway-fab waves-effect waves-light red" href="{{ route('site.details', $product->slug) }}"><i class="material-icons">visibility</i></a>
             </div>
             <div class="card-content">
                 <span class="card-title">{{ $product->nome }}</span>
