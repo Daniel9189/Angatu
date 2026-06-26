@@ -29,12 +29,18 @@
     <nav class="green">
         <div class="nav-wrapper container" style="display: flex; align-items: center; justify-content: space-between;">
 
-            <a href="{{ route('site.index') }}" class="brand-logo"
-                style="position: relative; float: none; display: flex; align-items: center;">
-                Angatu
-            </a>
 
-            @if (!request()->routeIs('login.form'))
+            @if (request()->routeIs('login.form'))
+                <a href="{{ route('site.index') }}" class="brand-logo center"
+            style="position: relative; float: none; display: flex; align-items: center;">
+                    Angatu
+                </a>
+            @else
+                <a href="{{ route('site.index') }}" class="brand-logo"
+                    style="position: relative; float: none; display: flex; align-items: center;">
+                    Angatu
+                </a>
+
                 <div class="search-container" style="flex-grow: 1; max-width: 600px; margin: 0 2rem;">
                     <form action="{{ route('product.search') }}" method="GET">
                         <div class="input-field white"
