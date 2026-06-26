@@ -100,11 +100,11 @@ class ProductController extends Controller
     public function search(Request $request)
     {
         $busca = $request->input('q');
-
+        
         if ($busca) {
-            $products = Product::where('nome', 'LIKE', "%{busca}%")
-                ->orWhere('descricao', 'LIKE', "%{busca}%")
-                ->paginate(12);
+            $products = Product::where('nome', 'LIKE', "%{$busca}%")
+            ->orWhere('descricao', 'LIKE', "%{$busca}%")
+            ->paginate(12);
         }
         else {
             $products = Product::paginate(12);

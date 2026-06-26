@@ -28,7 +28,7 @@ class ProductFactory extends Factory
             'descricao' => $this->faker->paragraph,
             'preco' => $this->faker->randomNumber(2),
             'slug' => Str::slug($nome),
-            'imagem' => 'https://picsum.photos/400/400?random=' . $this->faker->unique()->randomNumber(),
+            'imagem' => 'https://loremflickr.com/400/400/product?random=' . $this->faker->unique()->randomNumber(),
             'id_user' => User::factory(),
             'id_categoria' => Categoria::factory(),
         ];
