@@ -29,58 +29,65 @@
     <nav class="green">
         <div class="nav-wrapper container" style="display: flex; align-items: center; justify-content: space-between;">
 
-            <a href="{{ route('site.index') }}" class="brand-logo"
-                style="position: relative; float: none; display: flex; align-items: center;">
-                Angatu
-            </a>
 
-            <div class="search-container" style="flex-grow: 1; max-width: 600px; margin: 0 2rem;">
-                <form action="{{ route('product.search') }}" method="GET">
-                    <div class="input-field white"
-                        style="height: 40px; border-radius: 4px; display: flex; align-items: center; box-shadow: 0 1px 2px rgba(0,0,0,0.1);">
-                        <input id="search" name="q" value="{{ $busca ?? '' }}" type="search" placeholder="Buscar produtos, marcas e muito mais..."
-                            required
-                            style="color: #333; height: 100%; margin: 0; border-bottom: none !important; box-shadow: none !important; padding-left: 3rem;">
-                        <label class="label-icon" for="search" style="transform: translateY(-12px);">
-                            <i class="material-icons" style="color: #666;">search</i>
-                        </label>
-                    </div>
-                </form>
-            </div>
+            @if (request()->routeIs('login.form'))
+                <a href="{{ route('site.index') }}" class="brand-logo center"
+            style="position: relative; float: none; display: flex; align-items: center;">
+                    Angatu
+                </a>
+            @else
+                <a href="{{ route('site.index') }}" class="brand-logo"
+                    style="position: relative; float: none; display: flex; align-items: center;">
+                    Angatu
+                </a>
 
-            <ul style="display: flex; float: none; margin: 0;">
+                <div class="search-container" style="flex-grow: 1; max-width: 600px; margin: 0 2rem;">
+                    <form action="{{ route('product.search') }}" method="GET">
+                        <div class="input-field white"
+                            style="height: 40px; border-radius: 4px; display: flex; align-items: center; box-shadow: 0 1px 2px rgba(0,0,0,0.1);">
+                            <input id="search" name="q" value="{{ $busca ?? '' }}" type="search"
+                                placeholder="Buscar produtos, marcas e muito mais..." required
+                                style="color: #333; height: 100%; margin: 0; border-bottom: none !important; box-shadow: none !important; padding-left: 3rem;">
+                            <label class="label-icon" for="search" style="transform: translateY(-12px);">
+                                <i class="material-icons" style="color: #666;">search</i>
+                            </label>
+                        </div>
+                    </form>
+                </div>
 
-                <li class="hide-on-med-and-down">
-                    <a href="#!" class="dropdown-trigger" data-target="dropdown1">
-                        Categorias <i class="material-icons right">expand_more</i>
-                    </a>
-                </li>
+                <ul style="display: flex; float: none; margin: 0;">
 
-                @auth
-                    <li>
-                        <a href="#!" class="dropdown-trigger" data-target="dropdown2">
-                            Olá, {{ auth()->user()->firstName }} <i class="material-icons right">expand_more</i>
+                    <li class="hide-on-med-and-down">
+                        <a href="#!" class="dropdown-trigger" data-target="dropdown1">
+                            Categorias <i class="material-icons right">expand_more</i>
                         </a>
                     </li>
-                @else
+
+                    @auth
+                        <li>
+                            <a href="#!" class="dropdown-trigger" data-target="dropdown2">
+                                Olá, {{ auth()->user()->firstName }} <i class="material-icons right">expand_more</i>
+                            </a>
+                        </li>
+                    @else
+                        <li>
+                            <a href="{{ route('login.form') }}">
+                                Login <i class="material-icons right">lock</i>
+                            </a>
+                        </li>
+                    @endauth
+
                     <li>
-                        <a href="{{ route('login.form') }}">
-                            Login <i class="material-icons right">lock</i>
+                        <a href="{{ route('site.carrinho') }}" style="display: flex; align-items: center;">
+                            <i class="material-icons left">shopping_cart</i>
+                            <span class="new badge blue" data-badge-caption=""
+                                style="margin-left: 5px; min-width: 18px; height: 18px; line-height: 18px;">
+                                {{ \App\Facades\MeuCarrinho::getTotalQuantity() }}
+                            </span>
                         </a>
                     </li>
-                @endauth
-
-                <li>
-                    <a href="{{ route('site.carrinho') }}" style="display: flex; align-items: center;">
-                        <i class="material-icons left">shopping_cart</i>
-                        <span class="new badge blue" data-badge-caption=""
-                            style="margin-left: 5px; min-width: 18px; height: 18px; line-height: 18px;">
-                            {{ \App\Facades\MeuCarrinho::getTotalQuantity() }}
-                        </span>
-                    </a>
-                </li>
-            </ul>
-
+                </ul>
+            @endif
         </div>
     </nav>
 
