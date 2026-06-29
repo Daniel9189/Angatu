@@ -95,7 +95,7 @@
                 <div class="card-action center-align" style="background-color: #f9f9f9; border-radius: 0 0 8px 8px;">
                     <p style="margin: 0; color: #666;">
                         Novo no Angatu? 
-                        <a href="" class="green-text text-darken-3" style="font-weight: bold; margin-left: 5px;">
+                        <a href="{{ route('login.create') }}" class="green-text text-darken-3" style="font-weight: bold; margin-left: 5px;">
                             Crie sua conta
                         </a>
                     </p>
