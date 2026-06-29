@@ -8,6 +8,9 @@
 
 /* Bg gradient */
 .bg-gradient-green {background-image: linear-gradient(to right, #00c853 , #69f0ae);}
+.bg-gradient-purple {background-image: linear-gradient(to right, #6e00c8 , #7952d6);}
+.bg-gradient-yellow {background-image: linear-gradient(to right, #f7d308 , #f0df4b);}
+.bg-gradient-red {background-image: linear-gradient(to right, #e23629 , #e65757);}
 .bg-gradient-blue {background-image: linear-gradient(to right, #0091ea , #40c4ff);}
 .bg-gradient-orange {background-image: linear-gradient(to right, #f57f17 , #fbc02d );}
 
