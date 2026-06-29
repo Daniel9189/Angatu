@@ -30,7 +30,7 @@
         <div class="nav-wrapper container" style="display: flex; align-items: center; justify-content: space-between;">
 
 
-            @if (request()->routeIs('login.form'))
+            @if (request()->routeIs('login.form', 'login.create'))
                 <a href="{{ route('site.index') }}" class="brand-logo center"
             style="position: relative; float: none; display: flex; align-items: center;">
                     Angatu
@@ -106,16 +106,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-{{-- <h1>Empresa</h1>
-
-Nome do servidor: {{ $nome }} <br><br>
-
-Idade: {{ $idade }} <br><br>
-
-{!! $html !!} --}}
