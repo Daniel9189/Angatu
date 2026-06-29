@@ -52,6 +52,8 @@ class UserController extends Controller
 
         $user = User::create($user);
 
+        $user->markEmailAsVerified();
+
         Auth::login($user);
 
         return to_route('admin.dashboard');
