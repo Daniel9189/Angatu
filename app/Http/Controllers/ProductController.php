@@ -56,7 +56,7 @@ class ProductController extends Controller
 
         $product['slug'] = Str::slug($request->nome);
         
-        $product['id_user'] = auth()->user()->id;
+        $product['id_user'] = auth()->id;
         
         Product::create($product);
         
