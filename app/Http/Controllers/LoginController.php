@@ -19,7 +19,7 @@ class LoginController extends Controller
             'password.required' => 'O campo senha é obrigatório'
         ]);
         
-        if (Auth::attempt($credenciais, $request->remember)) {
+        if (Auth::attempt($credenciais, $request->boolean('remember'))) {
             $request->session()->regenerate();
             return redirect()->intended('admin/dashboard');
         } else {
